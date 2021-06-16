@@ -1,0 +1,48 @@
+﻿@model IEnumerable<UsuarioModel>
+
+@{
+    ViewData["Title"] = "Usuario";
+}
+
+<h1>Usuario</h1>
+
+<div>
+    <h4>Usuario</h4>
+    <hr />
+    <table class="table"> 
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Nombre)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Email)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Telefono)
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(model => item.Nombre)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => item.Email)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => item.Telefono)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+                        @Html.ActionLink("Details", "Details", new { /* id = Model.PrimaryKey */ }) |
+                        @Html.ActionLink("Delete", "Delete", new { /* id = Model.PrimaryKey */ }) |
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
